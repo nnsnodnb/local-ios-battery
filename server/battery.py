@@ -21,7 +21,7 @@ def receive_battery():
     return response(body='Success', status=200)
 
 
-app = default_app
+app = default_app()
 Database()
 
 if __name__ == '__main__':
