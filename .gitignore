@@ -27,6 +27,7 @@ Temporary Items
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
+.idea/
 __pycache__/
 *.py[cod]
 *$py.class
@@ -167,3 +168,6 @@ xcuserdata/
 !*.xcodeproj/xcshareddata/
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
+
+## Settings file
+server/db.sqlite3
