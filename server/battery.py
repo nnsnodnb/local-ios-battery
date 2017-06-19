@@ -18,6 +18,9 @@ def receive_battery():
 
     Database().insert(request.json)
 
+    return response(body='Success', status=200)
+
+
 app = default_app
 Database()
 
