@@ -7,7 +7,7 @@ def receive_battery():
     """
     Sample request
     $ curl -X POST http://HOSTNAME/receive -H 'Content-Type: application/json' \
-           -d '{"datetime":"2017-06-20 00:39", "uuid":"XXXXXXX", "battery":"99.0", "name":"iPhone SE"}'
+           -d '{"name":"iPhone SE", "battery":"99.0", "uuid":"XXXXXXX"}'
     """
     if 'name' not in request.json:
         return response(body='Required "Name of Device"', status=401)
