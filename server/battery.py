@@ -1,10 +1,15 @@
-from bottle import default_app, run, route, request, response, template
+from bottle import default_app, run, route, request, response, template, static_file
 from database import Database
 
 
 @route('/', method='GET')
 def index():
     return template('index')
+
+
+@route('/static/<filepath:path>')
+def static(filepath):
+    return static_file(filepath, root="./static")
 
 
 @route('/receive', method='POST')

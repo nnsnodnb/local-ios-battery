@@ -1,8 +1,14 @@
+<!DOCTYPE html>
 <html>
     <head>
-        <title></title>
+        <title>Battery Status Viewer</title>
+        <meta charset="UTF-8">
+        <link type="text/css" rel="stylesheet" href="/static/battery.css">
     </head>
+
     <body>
-        <h1>Index</h1>
+        <div class="battery empty"></div>
+        <div class="battery half"></div>
+        <div class="battery full"></div>
     </body>
 </html>
