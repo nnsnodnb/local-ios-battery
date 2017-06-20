@@ -41,7 +41,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        print(UIDevice.current.battery)
+        let name: String = UIDevice.current.modelName
+        let battery: String = UIDevice.current.battery
+        let uuid: String = UIDevice.current.identifierForVendor!.uuidString
+        let parameter: [String: String] = ["name": name,
+                                           "battery": battery,
+                                           "uuid": uuid]
+        APIClient.request("http://192.168.11.9:8080/receive", method: .post, parameter: parameter) { (response) in
+            if response.result.isSuccess {
+                print(response.result.value!)
+            }
+        }
     }
 
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
