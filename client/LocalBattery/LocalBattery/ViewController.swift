@@ -14,10 +14,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         let urlRequest = URLRequest(url: URL(string: "http://192.168.11.9:8080/")!)
         webView.delegate = self
         webView.loadRequest(urlRequest)

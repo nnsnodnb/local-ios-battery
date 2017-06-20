@@ -5,7 +5,6 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -28,12 +27,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="DHr-dq-8oY" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="8lK-gp-OnT"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="DHr-dq-8oY" secondAttribute="bottom" id="BAz-cQ-65V"/>
-                            <constraint firstItem="DHr-dq-8oY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ENw-I5-REq"/>
-                            <constraint firstItem="DHr-dq-8oY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KJC-WU-CLc"/>
-                            <constraint firstItem="DHr-dq-8oY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Rjv-Vs-T98"/>
-                            <constraint firstItem="DHr-dq-8oY" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="vrD-e9-vng"/>
+                            <constraint firstItem="DHr-dq-8oY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="CZ0-1R-yjH"/>
+                            <constraint firstItem="DHr-dq-8oY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="CcL-Fk-YrI"/>
+                            <constraint firstItem="DHr-dq-8oY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ipz-an-die"/>
+                            <constraint firstItem="DHr-dq-8oY" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="SVv-ZY-gtY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5Sg-ik-RUK"/>
