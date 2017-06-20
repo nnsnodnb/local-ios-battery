@@ -10,16 +10,37 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var webView: UIWebView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let urlRequest = URLRequest(url: URL(string: "http://192.168.11.9:8080/")!)
+        webView.delegate = self
+        webView.loadRequest(urlRequest)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
-
 }
 
+// MARK: - UIWebViewDelegate
+
+extension ViewController : UIWebViewDelegate {
+
+    func webViewDidStartLoad(_ webView: UIWebView) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    }
+
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+    }
+
+    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+    }
+}
