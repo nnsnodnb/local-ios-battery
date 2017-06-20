@@ -52,6 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print(response.result.value!)
             }
         }
+        completionHandler(.noData)
     }
 
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {

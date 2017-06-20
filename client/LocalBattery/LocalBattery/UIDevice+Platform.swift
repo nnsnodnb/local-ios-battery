@@ -8,7 +8,7 @@
 
 import UIKit
 
-private let DeviceList = [
+private let deviceList = [
     
     /* iPod Touch 5 */    "iPod5,1": "iPod Touch 5",
     /* iPod Touch 6 */    "iPod7,1": "iPod Touch 6",
@@ -53,7 +53,7 @@ extension UIDevice {
 
     var modelName: String {
         let identifier = platform
-        return DeviceList[identifier] ?? identifier
+        return deviceList[identifier] ?? identifier
     }
 
     var battery: String {
