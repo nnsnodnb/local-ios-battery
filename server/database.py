@@ -60,3 +60,6 @@ class Database(object):
 
     def token_update(self, json):
         self.device_tokens.update().where(self.device_tokens.c.token == json['uuid']).execute(token=json['token'])
+
+    def token_select_all(self):
+        return self.device_tokens.select().execute().fetchall()
