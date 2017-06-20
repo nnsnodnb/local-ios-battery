@@ -4,7 +4,8 @@ from database import Database
 
 @route('/', method='GET')
 def index():
-    return template('index')
+    batteries = db.battery_select_all_group_by_uuid()
+    return template('index', batteries=batteries)
 
 
 @route('/static/<filepath:path>')

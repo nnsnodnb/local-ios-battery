@@ -47,6 +47,9 @@ class Database(object):
     def battery_select_all(self):
         return self.batteries.select().execute().fetchall()
 
+    def battery_select_all_group_by_uuid(self):
+        return self.batteries.select().group_by(self.batteries.c.uuid).execute().fetchall()
+
     def battery_select_filter_device(self, uuid):
         return self.batteries.select().where(self.batteries.c.uuid == uuid).order_by('datetime').execute().fetchall()
 
