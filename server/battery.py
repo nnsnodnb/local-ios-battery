@@ -9,7 +9,7 @@ def index():
 
 @route('/static/<filepath:path>')
 def static(filepath):
-    return static_file(filepath, root="./static")
+    return static_file(filepath, root='./static')
 
 
 @route('/receive', method='POST')
