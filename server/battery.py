@@ -16,13 +16,34 @@ def receive_battery():
     if 'uuid' not in request.json:
         return response(body='Required "UUID"', status=401)
 
-    Database().insert(request.json)
+    db.battery_insert(request.json)
 
-    return response(body='Success', status=200)
+    return 'Success'
+
+
+@route('/token', method='PUT')
+def receive_device_token():
+    """
+    Sample request
+    $ curl -X PUT http://HOSTNAME/token -H 'Content-Type: application/json' \
+           -d '{"token":"XXXXXXXXXXXXXX", "uuid": "XXXXXXX"}'
+    """
+    if 'token' not in request.json:
+        return response(body='Required "Device Token"', status=401)
+    if 'uuid' not in request.json:
+        return response(body='Required "UUID"', status=401)
+
+    if db.is_token(request.json['uuid']):
+        db.token_update(request.json)
+    else:
+        db.token_insert(request.json)
+
+    return 'Success'
 
 
 app = default_app()
-Database()
+db = Database()
+
 
 if __name__ == '__main__':
     run(host='0.0.0.0', port=8080, debug=True, reloader=True)
