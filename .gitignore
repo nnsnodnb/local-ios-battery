@@ -168,3 +168,5 @@ xcuserdata/
 
 ## Settings file
 server/db.sqlite3
+*.pem
+client/LocalBattery/Carthage/Checkouts/*
