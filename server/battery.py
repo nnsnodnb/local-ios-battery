@@ -1,5 +1,10 @@
-from bottle import default_app, run, route, request, response
+from bottle import default_app, run, route, request, response, template
 from database import Database
+
+
+@route('/', method='GET')
+def index():
+    return template('index')
 
 
 @route('/receive', method='POST')

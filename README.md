@@ -8,7 +8,7 @@ Monitor battery status of local iOS devices.
 
 ```console
 $ git clone https://github.com/nnsnodnb/local-ios-battery.git
-$ cd local-ios-battery/
+$ cd /path/to/local-ios-battery/server
 $ pip install -r requirements.txt
 $ gunicorn battery:app -b 0.0.0.0:8080
 ```
