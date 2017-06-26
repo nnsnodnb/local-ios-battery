@@ -18,6 +18,7 @@ $ gunicorn battery:app -b 0.0.0.0:8080
 ```console
 $ brew update
 $ brew install carthage
+$ carthage bootstrap --platform ios
 $ open /path/to/local-ios-battery/client/LocalBattery/LocalBattery.xcodeproj/
 ```
 
